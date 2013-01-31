@@ -6,7 +6,9 @@ puts 'Exemplo: caelum'
 
 twitter = gets
 
-twitter = "caelum" if twitter == "\n"
+twitter.chomp
+
+twitter = "caelum" if twitter.empty?
 
 doc = Hpricot(open("http://twitter.com/#{twitter}"))
 items = doc / ".stream-item"
